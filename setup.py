@@ -24,6 +24,7 @@ setup(
         ],
     keywords="scratch sb3 converter extractor",
     packages=find_packages(),
+    scripts=['sb3_extractor/sb3_extractor'],
     python_requires=">=3.6",
     install_requires=[
         'sb3 @ git+https://github.com/waterimp/sb3#egg=sb3',

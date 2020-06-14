@@ -1,0 +1,4 @@
+#! /usr/bin/env python3
+
+from sb3_extractor import main
+main()

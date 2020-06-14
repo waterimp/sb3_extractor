@@ -36,7 +36,7 @@ pip3 install git+https://github.com/waterimp/sb3_extractor.git
 ### Example
 
 ```bash
-/path/to/sb3_extractor.py my_scratch_project.sb3
+sb3_extractor my_scratch_project.sb3
 ```
 
 
@@ -74,7 +74,7 @@ However, you may prefer more meaningful filenames and may benefit from the addit
 Let's invoke `sb3_extractor` and see what happens...
 
 ```bash
-$ sb3_extractor/sb3_extractor.py my_scratch_project.sb3
+$ sb3_extractor my_scratch_project.sb3
 processing my_scratch_project.sb3...
   * extracted Sprite1-000-costume1.svg
   * rasterized Sprite1-000-costume1-rasterized.png
