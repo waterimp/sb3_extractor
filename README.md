@@ -24,7 +24,7 @@ This software requires Python 3.6 or above.
 
 ### Current installation procedure
 
-pip3 install https://github.com/waterimp/sb3_extractor.git
+pip3 install git+https://github.com/waterimp/sb3_extractor.git
 
 
 ## Running
