@@ -42,11 +42,20 @@ pip3 install git+https://github.com/waterimp/sb3_extractor.git
 
 ## Background and motivation
 
-SB3 files are just a simple zip file containing a `project.json` file and hexadecimal filenames for the asset. Although you can simply use an unzip utility to exract all of the files, they will not be named in a convenient manner.
+SB3 files are just a simple zip file containing a `project.json` file and hexadecimal filenames for the asset.
+Although you can simply use an unzip utility to extract all of the files, they will not be named in a convenient manner.
+
+Let's say you have a project named "my_scratch_project" on Scratch.
+You can export your Scratch project to your computer by clicking on `File -> Save to your computer`.
+Your browser will then download a file called `my_scratch_project.sb3`.
+Once downloaded, there are some different ways we can extract the assets from the files.
+Below you can find two different ways to extract the files: normal zip extration tools and `sb3_extractor`.
 
 ### Example: unzipping `my_scratch_project.sb3` without sb3_extractor
 
+
 ```bash
+$ # Note: unzip is a utility on Linux and Mac. For Windows, you can just right-click on the file to unzip or use the "Expand-Archive" powershell command.
 $ unzip my_scratch_project.sb3
 Archive:  my_scratch_project.sb3
   inflating: project.json            
@@ -57,7 +66,12 @@ Archive:  my_scratch_project.sb3
   inflating: 0f1a9ae400aa0ef452b0a420547a010e.svg  
 ```
 
+If all you need is the files, then the sb3_extractor tool may not be needed.
+However, you may prefer more meaningful filenames and may benefit from the additional converted files. Let's have a look at how sb3_extractor handles the same file.
+
 ### Example: unzipping `my_scratch_project.sb3` WITH sb3_extractor
+
+Let's invoke `sb3_extractor` and see what happens...
 
 ```bash
 $ sb3_extractor/sb3_extractor.py my_scratch_project.sb3
@@ -80,6 +94,11 @@ Sprite1-002-costume3-rasterized.png
 Sprite1-002-costume3.svg
 ```
 
+You may find these exported filenames more meaningful and conveniently organized for an import into another game platform.
+
+Also, notice the rasterized images that were generated (`*.png` files from `*.svg`). These `*.png` files may be useful if you need pixel graphics for your new endeavor. If not, the `*.svg` files are available for infinite resolution.
+
+Please note at this time that the `*.wav` files are not extracted.
 
 ## Contributing to sb3_extractor
 
