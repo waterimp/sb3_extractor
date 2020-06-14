@@ -4,6 +4,7 @@
 
 If you have some game assets in Scratch that you like and you would like to import them into another platform (i.e., Unity, PyGame, etc.), you may find this tool useful at organizing the files for import.
 
+
 ## Project status
 
 Currently just a beta prototype. This is not a polished tool yet.
@@ -16,6 +17,7 @@ This project is built on top of the `sb3` library which is also not stable yet.
 * embedded pixel graphics not handled yet.
 * embedded audio files not handled yet.
 
+
 ## Installation
 
 ### Requirements
@@ -24,7 +26,9 @@ This software requires Python 3.6 or above.
 
 ### Current installation procedure
 
+```bash
 pip3 install git+https://github.com/waterimp/sb3_extractor.git
+```
 
 
 ## Running
@@ -51,7 +55,6 @@ Archive:  my_scratch_project.sb3
   inflating: cd21514d0531fdffb22204e0ec5ed84a.svg  
   inflating: b7853f557e4426412e64bb3da6531a99.svg  
   inflating: 0f1a9ae400aa0ef452b0a420547a010e.svg  
-  inflating: ee299f6bb0802997ad8a7563b5d89af8.svg  
 ```
 
 ### Example: unzipping `my_scratch_project.sb3` WITH sb3_extractor
@@ -76,7 +79,6 @@ Sprite1-001-costume2.svg
 Sprite1-002-costume3-rasterized.png
 Sprite1-002-costume3.svg
 ```
-
 
 
 ## Contributing to sb3_extractor
