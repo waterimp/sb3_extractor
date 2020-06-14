@@ -20,6 +20,8 @@ setup(
         "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: Implementation :: CPython",
         "Topic :: Education",
+        "Topic :: Games/Entertainment",
+        "Topic :: Multimedia :: Graphics :: Graphics Conversion",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
     keywords="scratch sb3 converter extractor",
