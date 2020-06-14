@@ -58,6 +58,13 @@ Archive:  my_scratch_project.sb3
 
 ```bash
 $ sb3_extractor/sb3_extractor.py my_scratch_project.sb3
+processing my_scratch_project.sb3...
+  * extracted Sprite1-000-costume1.svg
+  * rasterized Sprite1-000-costume1-rasterized.png
+  * extracted Sprite1-001-costume2.svg
+  * rasterized Sprite1-001-costume2-rasterized.png
+  * extracted Sprite1-002-costume3.svg
+  * rasterized Sprite1-002-costume3-rasterized.png
 $
 $ # Now notice the *.svg files that were exported, with nice names. rasterized *.png files were rendered as well.
 $ ls -1
@@ -68,8 +75,6 @@ Sprite1-001-costume2-rasterized.png
 Sprite1-001-costume2.svg
 Sprite1-002-costume3-rasterized.png
 Sprite1-002-costume3.svg
-
-
 ```
 
 
