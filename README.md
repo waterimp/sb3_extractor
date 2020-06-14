@@ -1,8 +1,8 @@
 # sb3_extractor
 
-`sb3_extractor` is a tool that extracts sprite information from Scratch SB3 files and dumps well-named image files. In addition to simply dumping `*.svg` files, the files are also be rasterized as `*.png` files too.
+`sb3_extractor` is a tool that extracts sprite information from Scratch SB3 files and dumps well-named image files. In addition to simply dumping `*.svg` files, the files are also rasterized as `*.png` files too.
 
-If you have some game assets in Scratch that you like and you would like to import them into another platform (i.e., Unity, PyGame, etc.), you may find this tool useful at organizing the files for import.
+If you have some game assets in Scratch that you like and you would like to import them into another platform (i.e., PyGame, Godot, Unity, GameMaker, RPGMaker, etc.), you may find this tool useful at organizing the files before the import.
 
 
 ## Project status
