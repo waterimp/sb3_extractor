@@ -66,6 +66,7 @@ def extract_sb3(filename):
         scripts = sprite.block_info.scripts()
         blocks = sprite.block_info.blocks()
         costumes = sprite.costumes
+        sounds = sprite.sounds
         for costume_index, costume in enumerate(costumes):
             costume_name = replace_delimiters(costume.name)
             costume_center = (costume.center_x, costume.center_y)
@@ -85,6 +86,21 @@ def extract_sb3(filename):
 
             rasterize_png(new_filename)
 
+        for sound_index, sound in enumerate(sounds):
+            sound_name = replace_delimiters(sound.name)
+            sound_filename = sound.filename
+
+            new_filename = f'{sprite_name}-{str(sound_index).zfill(3)}-{sound_name}{os.path.splitext(sound_filename)[1]}'
+            new_filename = beautify_path_fragment(new_filename)
+            new_filename = sanitize_path_fragment(new_filename)  # important for security
+            new_filename = os.path.join(base_folder, new_filename)
+
+            print(f'  * extracted {new_filename}')
+            
+            contents = assets_map[sound_filename].read()
+
+            with open(new_filename, 'wb') as output_file:
+                output_file.write(contents)
 
 if __name__ == '__main__':
     main()
