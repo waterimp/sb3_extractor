@@ -98,7 +98,6 @@ You may find these exported filenames more meaningful and conveniently organized
 
 Also, notice the rasterized images that were generated (`*.png` files from `*.svg`). These `*.png` files may be useful if you need pixel graphics for your new endeavor. If not, the `*.svg` files are available for infinite resolution.
 
-Please note at this time that the `*.wav` files are not extracted.
 
 ## Contributing to sb3_extractor
 
