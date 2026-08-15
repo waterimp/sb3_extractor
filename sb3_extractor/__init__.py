@@ -212,6 +212,19 @@ def extract_sb3(filename):
         for costume_index, costume in enumerate(costumes):
             costume_name = replace_delimiters(costume.name)
             costume_filename = costume.filename
+
+            if costume_filename is None:
+                print(f'  ! skipping costume "{costume.name}" on {sprite_name}: '
+                      f'no asset file referenced (missing md5ext)')
+                continue
+
+            try:
+                contents = assets_map[costume_filename].read()
+            except KeyError:
+                print(f'  ! skipping costume "{costume.name}" on {sprite_name}: '
+                      f'asset {costume_filename} not found in file')
+                continue
+
             costume_extension = os.path.splitext(costume_filename)[1]
 
             new_filename = f'{sprite_name}-{str(costume_index).zfill(3)}-{costume_name}{costume_extension}'
@@ -220,8 +233,6 @@ def extract_sb3(filename):
             new_filename = os.path.join(base_folder, new_filename)
 
             print(f'  * extracted {new_filename}')
-
-            contents = assets_map[costume_filename].read()
 
             with open(new_filename, 'wb') as output_file:
                 output_file.write(contents)
@@ -233,14 +244,24 @@ def extract_sb3(filename):
             sound_name = replace_delimiters(sound.name)
             sound_filename = sound.filename
 
+            if sound_filename is None:
+                print(f'  ! skipping sound "{sound.name}" on {sprite_name}: '
+                      f'no asset file referenced (missing md5ext)')
+                continue
+
+            try:
+                contents = assets_map[sound_filename].read()
+            except KeyError:
+                print(f'  ! skipping sound "{sound.name}" on {sprite_name}: '
+                      f'asset {sound_filename} not found in file')
+                continue
+
             new_filename = f'{sprite_name}-{str(sound_index).zfill(3)}-{sound_name}{os.path.splitext(sound_filename)[1]}'
             new_filename = beautify_path_fragment(new_filename)
             new_filename = sanitize_path_fragment(new_filename)  # important for security
             new_filename = os.path.join(base_folder, new_filename)
 
             print(f'  * extracted {new_filename}')
-
-            contents = assets_map[sound_filename].read()
 
             with open(new_filename, 'wb') as output_file:
                 output_file.write(contents)
